@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 // Import to bring in the API call created in 6.2
-import { UserRegistrationService } from '../fetch-api-data.service';
+import { FetchApiDataService  } from '../fetch-api-data.service';
 
 // Import to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -19,7 +19,7 @@ export class UserLoginFormComponent implements OnInit{
   @Input() userData = { Username: '', Password: '' }
 
   constructor(
-    public fetchApiData: UserRegistrationService,
+    public fetchApiData: FetchApiDataService ,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar) { }
   
@@ -33,13 +33,13 @@ export class UserLoginFormComponent implements OnInit{
       console.log(result);
       localStorage.setItem('user', JSON.stringify(result.user));
       localStorage.setItem('token', result.token);
-      this.dialogRef.close(); // Will close modal on success (To be implemented)
+      this.dialogRef.close(); // Will close modal on success
       this.snackBar.open('User login successful', 'OK', {
         duration: 2000
       });
     }, (result) => {
       console.log(result);
-      this.snackBar.open('User login successful', 'OK', {
+      this.snackBar.open('User login failed', 'OK', {
         duration: 2000
       });
     });
