@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movie-card',
@@ -10,7 +11,8 @@ export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
 
-  constructor (public fetchMovies: FetchApiDataService) {}
+  constructor (public fetchMovies: FetchApiDataService,
+    public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -24,4 +26,19 @@ export class MovieCardComponent implements OnInit {
       return this.movies;
     });
   }
+
+  /* openUserRegistrationDialog(): void {
+    this.dialog.open(UserRegistrationFormComponent, {
+      // Assign dialog width
+      width: '380px'
+    });
+  }
+
+  //Function that will open the dialog when the login button is clicked
+  openUserLoginDialog(): void {
+    this.dialog.open(UserLoginFormComponent, {
+      // Assign dialog width
+      width: '380px'
+    });
+  }*/
 }

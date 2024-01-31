@@ -28,5 +28,5 @@ $myMovie-Angular-client-theme: mat.define-dark-theme((
 @include mat.all-component-themes($myMovie-Angular-client-theme);
 
 /* add global styles to this file */
-html, body { height: 100%; background-color: #212121; color: #ffffff;}
+html, body { height: 100%; background-color: #212121; color: #ffffff; font-size: 18px;}
 h1 { font-size: 5em;}
