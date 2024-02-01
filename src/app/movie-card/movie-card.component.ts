@@ -66,23 +66,23 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // Function Syp.
-  /*   openGenreDialog(name: string, description: string): void {
-    this.dialog.open(GenreInfoComponent, {
+  // Function that will open the dialog when synopsis button is clicked
+  openSynopsisDialog(description: string): void {
+    this.dialog.open(MovieSynopsisComponent, {
       data: {
-        Name: name,
         Description: description,
       },
       width: '450px',
     });
-  }*/
+  }
 
   // Function to get favMovie list
   getFavMovies(): void { 
     this.user = this.fetchApiData.getUser();
     this.userData.FavoriteMovies = this.user.FavoriteMovies;
     this.FavoriteMovies = this.user.FavoriteMovies;
-    console.log(this.FavoriteMovies); 
+    console.log('Fav Movies in getFavMovie', this.FavoriteMovies); 
+    console.log('User in getFavMovie', this.user);
   }
 
   // Function to check if movie is favMovie
@@ -114,9 +114,7 @@ export class MovieCardComponent implements OnInit {
       });
     });
   }
-  
 
- 
   // Function to delete movie from favMovie list
   deleteFavMovies(movie: any): void {
     this.user = this.fetchApiData.getUser();
