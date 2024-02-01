@@ -104,16 +104,18 @@ export class FetchApiDataService {
         Authorization: 'Bearer ' + token,
       })}).pipe(
       map(this.extractResponseData),
-      map((data) => data.FavoriteMovies),
+      //map((data) => data.FavoriteMovies),
       catchError(this.handleError)
     );
   }
 
   // Making the api call for the Add a Movie to Favourite Movies endpoint
-  addFavouriteMovies(movieID: string): Observable<any> {
+  addFavouriteMovies( movie: any ): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('user');
-    return this.http.post(apiUrl + 'users/' + username + '/movies/' + movieID, null, {headers: new HttpHeaders(
+    console.log('in fetch api service: ', movie);
+    console.log('in fetch api service_id: ', movie._id);
+    return this.http.post(apiUrl + 'users/' + user.Username + '/movies/' + movie._id, null, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -149,10 +151,11 @@ export class FetchApiDataService {
   }
 
   // Making the api call for the Delete a Movie to Favourite Movies endpoint
-  deleteFavouriteMovies(MovieID: string): Observable<any> {
+  deleteFavouriteMovies(movie: any): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('user');
-    return this.http.delete(apiUrl + 'users/' + username + '/movies/' + MovieID, {headers: new HttpHeaders(
+    console.log('in fetch api service: ', movie._id);
+    return this.http.delete(apiUrl + 'users/' + user.Username + '/movies/' + movie._id, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -160,8 +163,6 @@ export class FetchApiDataService {
       catchError(this.handleError)
     );
   }
-
-  
 
   private handleError(error: HttpErrorResponse): any {
       if (error.error instanceof ErrorEvent) {
