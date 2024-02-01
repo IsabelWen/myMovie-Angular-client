@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DirectorInfoComponent } from '../director-info/director-info.component';
 import { GenreInfoComponent } from '../genre-info/genre-info.component';
+import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.component';
 
 // Import to bring in the API call created in 6.2
 import { FetchApiDataService  } from '../fetch-api-data.service';
