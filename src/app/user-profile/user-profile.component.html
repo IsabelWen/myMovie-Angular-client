@@ -74,6 +74,9 @@
     <div class="fav-movies-cards">
         <div class="profile-card-header">
             <h3>Favorite Movies</h3>
+            <div *ngIf="FavoriteMovies.length === 0" class="movie-card-container" style="font-size: 18px;">
+                <p>You have no favorite movies.</p>
+            </div>
         </div>
         <!-- Favorite Movies Cards Start -->
         <div class="movie-card-container">
