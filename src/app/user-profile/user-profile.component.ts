@@ -12,6 +12,7 @@ import { FetchApiDataService  } from '../fetch-api-data.service';
 
 // Import to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ResourceLoader } from '@angular/compiler';
 
 @Component({
   selector: 'app-user-profile',
@@ -68,12 +69,14 @@ export class UserProfileComponent implements OnInit{
 
   // function to delete user profile
   deleteUser(): void {
-    this.fetchApiData.deleteUser().subscribe((result) => {
+    this.router.navigate(['welcome']).then(() => {
       localStorage.clear();
-      this.router.navigate(['welcome']);
-      this.snackBar.open('User deleted successful', 'OK', {
+      this.snackBar.open('User successfully deleted.', 'OK', {
         duration: 2000
       });
+    })
+    this.fetchApiData.deleteUser().subscribe((result) => {
+      console.log(result);
     });
   }
 
