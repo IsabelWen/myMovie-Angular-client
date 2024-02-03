@@ -108,10 +108,11 @@ export class MovieCardComponent implements OnInit {
   addFavMovies(movie: any): void {
     this.user = this.fetchApiData.getUser();
     this.userData.Username = this.user.Username;
-    this.fetchApiData.addFavouriteMovies(movie).subscribe(() => {
+    this.fetchApiData.addFavouriteMovies(movie).subscribe((result) => {
+      localStorage.setItem('user', JSON.stringify(result));
       this.getFavMovies(); 
       this.snackBar.open('Movie has been added to your favorites!', 'OK', {
-        duration: 2000,
+        duration: 3000,
       });
     });
   }
@@ -120,10 +121,11 @@ export class MovieCardComponent implements OnInit {
   deleteFavMovies(movie: any): void {
     this.user = this.fetchApiData.getUser();
     this.userData.Username = this.user.Username;
-    this.fetchApiData.deleteFavouriteMovies(movie).subscribe((resp: any) => {
+    this.fetchApiData.deleteFavouriteMovies(movie).subscribe((result) => {
+      localStorage.setItem('user', JSON.stringify(result));
       this.getFavMovies();
       this.snackBar.open('Movie has been deleted from your favorites!', 'OK', {
-        duration: 2000,
+        duration: 3000,
       });
     });
   }
