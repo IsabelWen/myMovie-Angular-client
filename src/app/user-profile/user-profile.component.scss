@@ -52,9 +52,8 @@
     width: 90%;
     margin-top: 5vh;
     padding: 25px;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 }
 .movie-card-container {
     display: flex;
@@ -81,6 +80,7 @@
     margin-bottom: 5px;
     height: 20%;
     align-items: center;
+    text-align: left;
 }
 .card-title-fav {
     font-size: 25px;
