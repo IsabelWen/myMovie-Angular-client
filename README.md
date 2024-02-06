@@ -2,26 +2,39 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
-## Development server
+## Description
+The client-side for an app called myMovie based on its existing server-side code (REST API and database).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Dependencies
+* Angular: Web application framework for building single-page client applications.
+* Angular Material: UI component library for Angular, implementing Google's Material Design.
+* TypeDoc: Generates HTML API documentation from TypeScript code.
 
-## Code scaffolding
+## Views
+### Welcome View
+* Allows users to either log in with a username and password or signup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Main View
+* Returns all movie from the API to the user
+* Ability to see director details, genre details and synopsis of each movie
+* in Navbar:
+    * Ability to log out
+    * Ability to navigate to Profile View
 
-## Build
+### Profile View
+* Displays user registration details
+* Allows users to update their info (username, email, date of birth)
+* Allows existing users to deregister
+* Displays favorite movies
+    * Allows users to remove a movie from their list of favorites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Set up this App
+* Clone this repository.
+* Navigate to the myMovie-Angular-client folder and run `npm install`
+* Install Angular by running `npm install -g @angular/cli`
+* Install Angular Material as a project dependency using your Angular CLI `ng add @angular/material`
+    * Choose "Custom" to select a custom theme
+    * Yes to set up Angular typography styles
+    * Yes to set up browser animations for Angular Material
+* Install TypeDoc as a project dependency by running `npm install typedoc --save-dev`
+* Run `ng serve`, then navigate to  `http://localhost:4200/`
