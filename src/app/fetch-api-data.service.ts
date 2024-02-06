@@ -3,7 +3,6 @@ import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Title } from '@angular/platform-browser';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://movieapionrender.onrender.com/';
