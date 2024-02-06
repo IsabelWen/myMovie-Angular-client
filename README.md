@@ -10,6 +10,12 @@ The client-side for an app called myMovie based on its existing server-side code
 * Angular Material: UI component library for Angular, implementing Google's Material Design.
 * TypeDoc: Generates HTML API documentation from TypeScript code.
 
+## The API the project uses
+movie_api (https://github.com/IsabelWen/movie_api/tree/main)
+
+## Link to app
+Hosted on GitHub: https://isabelwen.github.io/myMovie-Angular-app/welcome
+
 ## Views
 ### Welcome View
 * Allows users to either log in with a username and password or signup
