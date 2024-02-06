@@ -37,10 +37,4 @@ Hosted on GitHub: https://isabelwen.github.io/myMovie-Angular-app/welcome
 ## Set up this App
 * Clone this repository.
 * Navigate to the myMovie-Angular-client folder and run `npm install`
-* Install Angular by running `npm install -g @angular/cli`
-* Install Angular Material as a project dependency using your Angular CLI `ng add @angular/material`
-    * Choose "Custom" to select a custom theme
-    * Yes to set up Angular typography styles
-    * Yes to set up browser animations for Angular Material
-* Install TypeDoc as a project dependency by running `npm install typedoc --save-dev`
 * Run `ng serve`, then navigate to  `http://localhost:4200/`
