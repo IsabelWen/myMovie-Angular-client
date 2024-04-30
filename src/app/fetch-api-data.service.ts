@@ -25,7 +25,6 @@ export class FetchApiDataService {
    * @returns {Observable<any>} - Observable for the API response.
    */
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
     );
@@ -37,7 +36,6 @@ export class FetchApiDataService {
    * @returns {Observable<any>} - Observable for the API response.
    */
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
     catchError(this.handleError)
     );
@@ -167,7 +165,6 @@ export class FetchApiDataService {
    * @returns {Observable<any>} - Observable for the API response.
    */
   editUser(userDetails: any): Observable<any> {
-    console.log(userDetails);
     const token = localStorage.getItem('token');
     return this.http.put(apiUrl + 'users/' + userDetails.Username, userDetails, {headers: new HttpHeaders(
       {

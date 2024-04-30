@@ -71,7 +71,7 @@ export class UserProfileComponent implements OnInit{
    */
   updateUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
-      console.log('User update success:', result);
+      console.log('User update success');
       localStorage.setItem('user', JSON.stringify(result));
       this.snackBar.open('User update successful', 'OK', {
         duration: 2000
